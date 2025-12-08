@@ -17,6 +17,7 @@ public class PlatformTrigger : MonoBehaviour
     {
         
     }
+    // here's a comment
 
     // Update is called once per frame
     void Update()
