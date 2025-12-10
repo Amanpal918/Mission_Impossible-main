@@ -42,6 +42,7 @@
     <UnityVersion>6000.0.59f2</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
+    <Analyzer Include="C:\Users\chama\.vscode\extensions\visualstudiotoolsforunity.vstuc-1.2.0\Analyzers\Microsoft.Unity.Analyzers.dll" />
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\6000.0.59f2\Editor\Data\Tools\Unity.SourceGenerators\Unity.SourceGenerators.dll" />
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\6000.0.59f2\Editor\Data\Tools\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\6000.0.59f2\Editor\Data\Tools\Unity.SourceGenerators\Unity.UIToolkit.SourceGenerator.dll" />
@@ -64,7 +65,9 @@
     <Compile Include="Assets\Scripts\Mechanics\EnemyController.cs" />
     <Compile Include="Assets\Scripts\Gameplay\PlayerDeath.cs" />
     <Compile Include="Assets\Scripts\Gameplay\PlayerTokenCollision.cs" />
+    <Compile Include="Assets\PlatformTrigger.cs" />
     <Compile Include="Assets\Scripts\Mechanics\VictoryZone.cs" />
+    <Compile Include="Assets\SpikeTrap.cs" />
     <Compile Include="Assets\Scripts\Gameplay\PlayerEnemyCollision.cs" />
     <Compile Include="Assets\Scripts\Mechanics\Health.cs" />
     <Compile Include="Assets\Scripts\Mechanics\KinematicObject.cs" />
@@ -73,6 +76,7 @@
     <Compile Include="Assets\Scripts\Mechanics\SpawnPoint.cs" />
     <Compile Include="Assets\Scripts\Gameplay\PlayerStopJump.cs" />
     <Compile Include="Assets\Scripts\Mechanics\PlayAudioClip.cs" />
+    <Compile Include="Assets\Scripts\Mechanics\Spike.cs" />
     <Compile Include="Assets\Mod Assets\Mod Resources\Scripts\Platformer\PlatformerSpeedPad.cs" />
     <Compile Include="Assets\Scripts\Mechanics\AnimationController.cs" />
     <Compile Include="Assets\Scripts\Core\Simulation.cs" />
@@ -1099,10 +1103,6 @@
       <HintPath>C:\Program Files\Unity\Hub\Editor\6000.0.59f2\Editor\Data\NetStandard\compat\2.1.0\shims\netfx\System.Xml.Serialization.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="Unity.RenderPipelines.Universal.2D.Runtime">
-      <HintPath>Library\ScriptAssemblies\Unity.RenderPipelines.Universal.2D.Runtime.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
     <Reference Include="Unity.InputSystem.ForUI">
       <HintPath>Library\ScriptAssemblies\Unity.InputSystem.ForUI.dll</HintPath>
       <Private>False</Private>
@@ -1167,6 +1167,10 @@
       <HintPath>Library\ScriptAssemblies\UnityEngine.UI.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="Unity.PlasticSCM.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.PlasticSCM.Editor.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="Unity.RenderPipelines.Core.ShaderLibrary">
       <HintPath>Library\ScriptAssemblies\Unity.RenderPipelines.Core.ShaderLibrary.dll</HintPath>
       <Private>False</Private>
@@ -1177,10 +1181,6 @@
     </Reference>
     <Reference Include="Unity.Multiplayer.Center.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.Multiplayer.Center.Editor.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="Unity.PlasticSCM.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.PlasticSCM.Editor.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Unity.Splines">
@@ -1303,6 +1303,10 @@
       <HintPath>Library\ScriptAssemblies\Unity.VisualScripting.State.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="Unity.2D.Sprite.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.2D.Sprite.Editor.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll</HintPath>
       <Private>False</Private>
@@ -1341,6 +1345,10 @@
     </Reference>
     <Reference Include="Unity.InternalAPIEditorBridgeDev.001">
       <HintPath>Library\ScriptAssemblies\Unity.InternalAPIEditorBridgeDev.001.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Unity.RenderPipelines.Universal.2D.Runtime">
+      <HintPath>Library\ScriptAssemblies\Unity.RenderPipelines.Universal.2D.Runtime.dll</HintPath>
       <Private>False</Private>
     </Reference>
   </ItemGroup>

@@ -10,7 +10,7 @@ public class SpikeTrap : MonoBehaviour
     public float riseSpeed = 5f;
     
     // How high it goes (0.6 is good for just peeking out)
-    public float riseAmount = 0.2f; 
+    public float riseAmount = 0.3f; 
 
     private Vector3 activePosition;
     private bool isTriggered = false;
@@ -21,7 +21,8 @@ public class SpikeTrap : MonoBehaviour
         if (spikeObject != null)
         {
             // Calculate where the spike should go (upwards)
-            activePosition = spikeObject.position + Vector3.up * riseAmount;
+            activePosition = spikeObject.position + Vector3.up* riseAmount;
+            spikeObject.gameObject.SetActive(false);
         }
         else
         {
@@ -46,6 +47,10 @@ public class SpikeTrap : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            if (spikeObject != null)
+            {
+                spikeObject.gameObject.SetActive(true);
+            }
             isTriggered = true;
         }
     }
