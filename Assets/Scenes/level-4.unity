@@ -6223,7 +6223,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.3723612, y: 0, z: -9}
+  m_LocalPosition: {x: 2.45135, y: 0, z: -9}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -45390,7 +45390,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spikeObject: {fileID: 1405875520}
   riseSpeed: 5
-  disAmount: 0.3
+  disAmount: 0.5
 --- !u!1 &822484542
 GameObject:
   m_ObjectHideFlags: 0
@@ -46958,7 +46958,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spikeObject: {fileID: 336765348}
   riseSpeed: 5
-  disAmount: 0.3
+  disAmount: 0.8
 --- !u!61 &965548086
 BoxCollider2D:
   m_ObjectHideFlags: 0

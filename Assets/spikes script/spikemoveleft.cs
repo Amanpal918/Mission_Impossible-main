@@ -20,7 +20,7 @@ public class spikemoveleft : MonoBehaviour
         // Safety check to prevent errors if you forgot to drag the spike in
         if (spikeObject != null)
         {
-            // Calculate where the spike should go (upwards)
+            // Calculate where the spike should go (leftwards)
             activePosition = spikeObject.position + Vector3.left * disAmount;
             spikeObject.gameObject.SetActive(true);
         }

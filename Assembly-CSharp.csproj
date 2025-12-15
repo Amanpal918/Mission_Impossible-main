@@ -48,8 +48,9 @@
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\6000.0.59f2\Editor\Data\Tools\Unity.SourceGenerators\Unity.UIToolkit.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Spike left right.cs" />
     <Compile Include="Assets\Scripts\Gameplay\PlayerSpawn.cs" />
+    <Compile Include="Assets\spikes script\spikemoveleft.cs" />
+    <Compile Include="Assets\MovingPlatformAttach.cs" />
     <Compile Include="Assets\Scripts\Core\Simulation.InstanceRegister.cs" />
     <Compile Include="Assets\Mod Assets\Mod Resources\Scripts\Platformer\Jiggler.cs" />
     <Compile Include="Assets\Scripts\Gameplay\PlayerEnteredVictoryZone.cs" />
@@ -59,7 +60,6 @@
     <Compile Include="Assets\Scripts\Gameplay\HealthIsZero.cs" />
     <Compile Include="Assets\Scripts\Mechanics\PatrolPath.Mover.cs" />
     <Compile Include="Assets\Scripts\Core\Fuzzy.cs" />
-    <Compile Include="Assets\spikemoveleft.cs" />
     <Compile Include="Assets\Scripts\Mechanics\DeathZone.cs" />
     <Compile Include="Assets\Scripts\Model\PlatformerModel.cs" />
     <Compile Include="Assets\Scripts\View\ParallaxLayer.cs" />
@@ -69,33 +69,37 @@
     <Compile Include="Assets\Scripts\Gameplay\PlayerTokenCollision.cs" />
     <Compile Include="Assets\PlatformTrigger.cs" />
     <Compile Include="Assets\Scripts\Mechanics\VictoryZone.cs" />
-    <Compile Include="Assets\SpikeTrap.cs" />
     <Compile Include="Assets\Scripts\Gameplay\PlayerEnemyCollision.cs" />
     <Compile Include="Assets\Scripts\Mechanics\Health.cs" />
     <Compile Include="Assets\Scripts\Mechanics\KinematicObject.cs" />
     <Compile Include="Assets\Mod Assets\Mod Resources\Scripts\Platformer\PlatformerJumpPad.cs" />
     <Compile Include="Assets\Scripts\Core\HeapQueue.cs" />
+    <Compile Include="Assets\spikes script\Spike trap move.cs" />
     <Compile Include="Assets\Scripts\Mechanics\SpawnPoint.cs" />
     <Compile Include="Assets\Scripts\Gameplay\PlayerStopJump.cs" />
+    <Compile Include="Assets\spikes script\Spike left right.cs" />
     <Compile Include="Assets\Scripts\Mechanics\PlayAudioClip.cs" />
     <Compile Include="Assets\Scripts\Mechanics\Spike.cs" />
     <Compile Include="Assets\Mod Assets\Mod Resources\Scripts\Platformer\PlatformerSpeedPad.cs" />
     <Compile Include="Assets\Scripts\Mechanics\AnimationController.cs" />
     <Compile Include="Assets\Scripts\Core\Simulation.cs" />
     <Compile Include="Assets\Scripts\Mechanics\PatrolPath.cs" />
+    <Compile Include="Assets\MainMenu.cs" />
     <Compile Include="Assets\Scripts\UI\MetaGameController.cs" />
     <Compile Include="Assets\Scripts\Gameplay\EnablePlayerInput.cs" />
     <Compile Include="Assets\Scripts\Gameplay\PlayerJumped.cs" />
+    <Compile Include="Assets\Platformrisingleft.cs" />
     <Compile Include="Assets\Scripts\Mechanics\TokenController.cs" />
     <Compile Include="Assets\Scripts\Mechanics\TokenInstance.cs" />
     <Compile Include="Assets\Mod Assets\Mod Resources\Scripts\Platformer\SimpleTrigger.cs" />
     <Compile Include="Assets\Mod Assets\Mod Resources\Scripts\Backend\TemplateEditorDetection.cs" />
     <Compile Include="Assets\Scripts\Mechanics\GameController.cs" />
+    <Compile Include="Assets\spikes script\SpikeTrap.cs" />
     <Compile Include="Assets\Scripts\Gameplay\PlayerLanded.cs" />
+    <Compile Include="Assets\Platformrisingright.cs" />
     <Compile Include="Assets\Scripts\View\AnimatedTile.cs" />
     <Compile Include="Assets\Scripts\Mechanics\PlayerController.cs" />
     <Compile Include="Assets\Scripts\Gameplay\EnemyDeath.cs" />
-    <Compile Include="Assets\Spike trap move.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
