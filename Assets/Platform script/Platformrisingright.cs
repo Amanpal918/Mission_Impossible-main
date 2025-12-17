@@ -11,7 +11,7 @@ public class Platformrisingright : MonoBehaviour
     public float disAmount = 0.3f; 
     public float delayBeforeright = 0.5f;
     
-    private bool moveLeft = false;
+    private bool moveright = false;
 
        private Vector3 activePosition;
     private bool isTriggered = false;
@@ -33,7 +33,7 @@ public class Platformrisingright : MonoBehaviour
             PlatformObject.position = Vector3.MoveTowards( PlatformObject.position,activePosition,riseSpeed * Time.deltaTime
             );  
         }
-            if(moveLeft)
+            if(moveright)
             {
                 PlatformObject.position = Vector3.MoveTowards( PlatformObject.position,activePosition,riseSpeed * Time.deltaTime
                 );  
@@ -48,18 +48,18 @@ public class Platformrisingright : MonoBehaviour
             
                 PlatformObject.gameObject.SetActive(true);
                 isTriggered = true;
-                StartCoroutine(leftMoveSequence());
+                StartCoroutine(rightMoveSequence());
             
             isTriggered = true;
         }
     }
-     IEnumerator leftMoveSequence()
+     IEnumerator rightMoveSequence()
     {
         while(Vector3.Distance(PlatformObject.position, activePosition) > 0.01f)
         yield return null;
         yield return new WaitForSeconds(delayBeforeright);
 
-        // now change target to LEFT
+        // now change target to right
         activePosition = PlatformObject.position + Vector3.right * disAmount;
     }
 }

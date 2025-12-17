@@ -9,7 +9,7 @@ public class PlatformTrigger : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             platformrb.bodyType = RigidbodyType2D.Dynamic;
-            platformrb.gravityScale = 5f;
+            platformrb.gravityScale =10f;
             Destroy(gameObject);
         }
     }
