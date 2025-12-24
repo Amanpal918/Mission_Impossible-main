@@ -3,6 +3,11 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
+    void Awake()
+    {
+        // Force Landscape mode for the Menu and Levels
+        Screen.orientation = ScreenOrientation.LandscapeLeft;
+    }
    public void PlayGame()
     {
         // This loads the next scene in the Build Settings list
