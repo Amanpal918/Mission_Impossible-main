@@ -15,6 +15,9 @@ namespace Platformer.Mechanics
     /// </summary>
     public class PlayerController : KinematicObject
     {
+        //mobile input 
+        private float mobileMove;
+        private bool mobileJump;
         public AudioClip jumpAudio;
         public AudioClip respawnAudio;
         public AudioClip ouchAudio;
@@ -65,9 +68,13 @@ namespace Platformer.Mechanics
         {
             if (controlEnabled)
             {
-                move.x = m_MoveAction.ReadValue<Vector2>().x;
-                if (jumpState == JumpState.Grounded && m_JumpAction.WasPressedThisFrame())
+                float keyboardMove = m_MoveAction.ReadValue<Vector2>().x;
+                move.x = Mathf. Clamp(keyboardMove + mobileMove, -1f, 1f);
+                if (jumpState == JumpState.Grounded && m_JumpAction.WasPressedThisFrame()||mobileJump)
+                {
                     jumpState = JumpState.PrepareToJump;
+                    mobileJump = false;
+                }
                 else if (m_JumpAction.WasReleasedThisFrame())
                 {
                     stopJump = true;
@@ -147,5 +154,26 @@ namespace Platformer.Mechanics
             InFlight,
             Landed
         }
+        public void MoveLeftDown()
+        {
+            Debug.Log("left btn pressed");
+            mobileMove = -1f;
+            
+        }
+        public void MoveRightDown()
+        {
+            Debug.Log("right btn pressed");
+            mobileMove = 1f;
+        }
+        public void StopMove()
+        {
+            mobileMove = 0f;
+        }
+        public void JumpButton()
+        {
+            mobileJump = true;
+        }
+      
     }
+
 }

@@ -1,5 +1,5 @@
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class PlatformTrigger : MonoBehaviour
 {
     public Rigidbody2D platformrb;
@@ -15,7 +15,7 @@ public class PlatformTrigger : MonoBehaviour
     }
     void Start()
     {
-        
+        //  SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
     // here's a comment
 

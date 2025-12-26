@@ -11,6 +11,9 @@ namespace Platformer.Gameplay
     public class GameController : MonoBehaviour
     {
         public static GameController Instance { get; private set; }
+        public LifeUi lifeUi;
+        public int maxLives=3;
+        private int currentLives;
 
         //This model field is public and can be therefore be modified in the 
         //inspector.
@@ -20,6 +23,20 @@ namespace Platformer.Gameplay
         //conveniently configured inside the inspector.
         public PlatformerModel model = Simulation.GetModel<PlatformerModel>();
 
+ void Awake()
+    {
+        if (Instance != null && Instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+        Instance = this;
+    }
+        void Start()
+        {
+            currentLives = maxLives;
+            lifeUi.UpdateHearts(currentLives);
+        }
         void OnEnable()
         {
             Instance = this;
@@ -36,10 +53,21 @@ namespace Platformer.Gameplay
         }
         //  PlatformerModel model = Simulation.GetModel<PlatformerModel>();
 
+    public void PlayerDied()
+        {
+            currentLives --;
+            lifeUi.UpdateHearts(currentLives);
+            Debug.Log("Player Died - GameController");
+         
+        }
         public  void Reswapn()
         {
             var player = model.player;
-            if (player.health.IsAlive)
+            if (!player.health.IsAlive)
+                return;
+                currentLives --;
+                lifeUi.UpdateHearts(currentLives);
+         if(currentLives <=0)
             {
                 player.health.Die();
                 model.virtualCamera.Follow = null;
@@ -51,7 +79,7 @@ namespace Platformer.Gameplay
                     player.audioSource.PlayOneShot(player.ouchAudio);
                 player.animator.SetTrigger("hurt");
                 player.animator.SetBool("dead", true);
-                Simulation.Schedule<PlayerSpawn>(2);
+                Simulation.Schedule<PlayerSpawn>(2f);
             }
         }
     }

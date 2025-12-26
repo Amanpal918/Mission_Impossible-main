@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using Platformer.Core;
 using Platformer.Model;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
 
 namespace Platformer.Gameplay
 {
@@ -12,6 +14,9 @@ namespace Platformer.Gameplay
     /// <typeparam name="PlayerDeath"></typeparam>
     public class PlayerDeath : Simulation.Event<PlayerDeath>
     {
+          public LifeUi lifeUi;
+        public int maxLives=3;
+        private int currentLives;
         PlatformerModel model = Simulation.GetModel<PlatformerModel>();
 
         public override void Execute()
@@ -29,7 +34,11 @@ namespace Platformer.Gameplay
                     player.audioSource.PlayOneShot(player.ouchAudio);
                 player.animator.SetTrigger("hurt");
                 player.animator.SetBool("dead", true);
-                Simulation.Schedule<PlayerSpawn>(2);
+                Debug.Log("Player Died");
+
+                GameController.Instance.PlayerDied();
+                Simulation.Schedule<ReloadScene>(2);
+       
             }
         }
     }
