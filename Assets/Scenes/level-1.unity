@@ -183968,6 +183968,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 568361840161048055, guid: ce84772e179edaa4c8487e9a8601f22c,
+        type: 3}
+      propertyPath: m_RaycastTarget
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 717043427101964921, guid: ce84772e179edaa4c8487e9a8601f22c,
         type: 3}
       propertyPath: m_Name
@@ -183979,6 +183984,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: -1427574068039319473, guid: 5848e0213d3b1f9479774658bb1c184c,
         type: 3}
+    - target: {fileID: 2240149611184940770, guid: ce84772e179edaa4c8487e9a8601f22c,
+        type: 3}
+      propertyPath: m_RaycastTarget
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4919052279084458911, guid: ce84772e179edaa4c8487e9a8601f22c,
         type: 3}
       propertyPath: m_Pivot.x
