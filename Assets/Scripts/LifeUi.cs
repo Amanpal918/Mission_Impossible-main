@@ -8,10 +8,11 @@ public class LifeUi : MonoBehaviour
     [SerializeField] private GameObject gameOverPanel;
      
      public void UpdateHearts(int lives)
-    {   Debug.Log("step1");
+    {  
+        //  Debug.Log("step1");
         for(int i =0; i<hearts.Length;i++)
         {
-             Debug.Log("step2");
+            //  Debug.Log("step2");
              if(i<lives)
             hearts[i].enabled = true;
           else

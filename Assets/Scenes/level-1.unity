@@ -2642,6 +2642,7 @@ GameObject:
   - component: {fileID: 263977320}
   - component: {fileID: 263977322}
   - component: {fileID: 263977321}
+  - component: {fileID: 263977323}
   m_Layer: 0
   m_Name: Falling Platform
   m_TagString: Untagged
@@ -2739,6 +2740,18 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &263977323
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 263977319}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 897f9bb734f295b40876e1bfc65fb213, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &269479142
 GameObject:
   m_ObjectHideFlags: 0
@@ -32690,51 +32703,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4463931916427586710, guid: 57025d5ba34af6b41a3c8929c1fe9e73,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4463931916427586710, guid: 57025d5ba34af6b41a3c8929c1fe9e73,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4463931916427586710, guid: 57025d5ba34af6b41a3c8929c1fe9e73,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4463931916427586710, guid: 57025d5ba34af6b41a3c8929c1fe9e73,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 4463931916427586710, guid: 57025d5ba34af6b41a3c8929c1fe9e73,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4463931916427586710, guid: 57025d5ba34af6b41a3c8929c1fe9e73,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4463931916427586710, guid: 57025d5ba34af6b41a3c8929c1fe9e73,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: LoadNextLevel
-      objectReference: {fileID: 0}
-    - target: {fileID: 4463931916427586710, guid: 57025d5ba34af6b41a3c8929c1fe9e73,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: VictoryScript, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 4463931916427586710, guid: 57025d5ba34af6b41a3c8929c1fe9e73,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 8793870246179880268, guid: 57025d5ba34af6b41a3c8929c1fe9e73,
         type: 3}
@@ -178080,6 +178048,7 @@ GameObject:
   - component: {fileID: 1754240609}
   - component: {fileID: 1754240610}
   - component: {fileID: 1754240611}
+  - component: {fileID: 1754240612}
   m_Layer: 0
   m_Name: GameController
   m_TagString: Untagged
@@ -178248,6 +178217,20 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1754240612
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1754240606}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4edd9c5da6261664aab0b16c404d10fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  obstacles:
+  - {fileID: 263977323}
 --- !u!1 &1757862670
 GameObject:
   m_ObjectHideFlags: 0
@@ -183968,26 +183951,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 568361840161048055, guid: ce84772e179edaa4c8487e9a8601f22c,
-        type: 3}
-      propertyPath: m_RaycastTarget
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 717043427101964921, guid: ce84772e179edaa4c8487e9a8601f22c,
         type: 3}
       propertyPath: m_Name
       value: Buttons canvas
-      objectReference: {fileID: 0}
-    - target: {fileID: 1272595929931412055, guid: ce84772e179edaa4c8487e9a8601f22c,
-        type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: -1427574068039319473, guid: 5848e0213d3b1f9479774658bb1c184c,
-        type: 3}
-    - target: {fileID: 2240149611184940770, guid: ce84772e179edaa4c8487e9a8601f22c,
-        type: 3}
-      propertyPath: m_RaycastTarget
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4919052279084458911, guid: ce84772e179edaa4c8487e9a8601f22c,
         type: 3}

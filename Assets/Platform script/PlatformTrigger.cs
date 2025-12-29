@@ -10,7 +10,7 @@ public class PlatformTrigger : MonoBehaviour
         {
             platformrb.bodyType = RigidbodyType2D.Dynamic;
             platformrb.gravityScale =10f;
-            Destroy(gameObject);
+            // Destroy(gameObject);
         }
     }
     void Start()

@@ -14,6 +14,8 @@ namespace Platformer.Gameplay
     /// <typeparam name="PlayerDeath"></typeparam>
     public class PlayerDeath : Simulation.Event<PlayerDeath>
     {
+        public ObstacleManager obstacleManager;
+        // public ObstacleReset obstacle;
           public LifeUi lifeUi;
         public int maxLives=3;
         private int currentLives;
@@ -37,7 +39,16 @@ namespace Platformer.Gameplay
                 Debug.Log("Player Died");
 
                 GameController.Instance.PlayerDied();
-                Simulation.Schedule<ReloadScene>(2);
+                
+                    // Reset obstacles
+
+                Debug.Log("Obstacles Reset");
+                // obstacle.ResetWithDelay();
+                ObstacleManager.Instance.ResetAllObstaclesWithDelay(2);
+                ObstacleManager.Instance.ResetAllSpikes();
+
+                // respwan the player 
+                Simulation.Schedule<PlayerSpawn>(2);
        
             }
         }
