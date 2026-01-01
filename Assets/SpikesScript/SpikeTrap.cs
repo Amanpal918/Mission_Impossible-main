@@ -46,12 +46,9 @@ public class SpikeTrap : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
-        {
-            if (spikeObject != null)
-            {
-                spikeObject.gameObject.SetActive(true);
-            }
-            isTriggered = true;
+        {    
+         spikeObject.gameObject.SetActive(true);
+         isTriggered = true;
         }
     }
 }

@@ -40,12 +40,11 @@ namespace Platformer.Gameplay
 
                 GameController.Instance.PlayerDied();
                 
-                    // Reset obstacles
-
-                Debug.Log("Obstacles Reset");
-                // obstacle.ResetWithDelay();
+                  
                 ObstacleManager.Instance.ResetAllObstaclesWithDelay(2);
+                // Debug.Log("Spikes Reset");
                 ObstacleManager.Instance.ResetAllSpikes();
+                ObstacleManager.Instance.ResetRisingPlatforms();
 
                 // respwan the player 
                 Simulation.Schedule<PlayerSpawn>(2);

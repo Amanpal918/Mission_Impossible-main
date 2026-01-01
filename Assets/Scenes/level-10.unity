@@ -48913,6 +48913,18 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ce84772e179edaa4c8487e9a8601f22c, type: 3}
+--- !u!114 &1186415578 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2921085620694683630, guid: ce84772e179edaa4c8487e9a8601f22c,
+    type: 3}
+  m_PrefabInstance: {fileID: 1186415577}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e91527145557a04381d75ea472b1139, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1213308513 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4520396350849616, guid: 7d60c822c3f1b408ea7a00ecdb5e047a,
@@ -190315,6 +190327,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1615360866}
   - component: {fileID: 1615360867}
+  - component: {fileID: 1615360868}
   m_Layer: 0
   m_Name: DestroyGnd
   m_TagString: Untagged
@@ -190386,6 +190399,18 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.7, y: 0.7}
   m_EdgeRadius: 0
+--- !u!114 &1615360868
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1615360865}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 897f9bb734f295b40876e1bfc65fb213, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1620406956
 GameObject:
   m_ObjectHideFlags: 0
@@ -190457,6 +190482,7 @@ GameObject:
   - component: {fileID: 1754240609}
   - component: {fileID: 1754240610}
   - component: {fileID: 1754240611}
+  - component: {fileID: 1754240612}
   m_Layer: 0
   m_Name: GameController
   m_TagString: Untagged
@@ -190476,6 +190502,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7804c522061bd4c558b5008952406407, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  obstacleManager: {fileID: 1754240612}
+  lifeUi: {fileID: 1186415578}
+  maxLives: 3
   model:
     virtualCamera: {fileID: 1946717928}
     player: {fileID: 838423048}
@@ -190623,6 +190652,22 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1754240612
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1754240606}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4edd9c5da6261664aab0b16c404d10fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  obstacles:
+  - {fileID: 1615360868}
+  - {fileID: 1889797503}
+  spikes: []
 --- !u!1 &1770959505 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1392875931, guid: 9a1bd12ebb35d4dc997aa0c5494eda9b,
@@ -192120,6 +192165,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1889797501}
   - component: {fileID: 1889797502}
+  - component: {fileID: 1889797503}
   m_Layer: 0
   m_Name: Tokens
   m_TagString: Untagged
@@ -192162,6 +192208,18 @@ SortingGroup:
   m_SortingLayer: 0
   m_SortingOrder: 6
   m_SortAtRoot: 0
+--- !u!114 &1889797503
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1889797500}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 897f9bb734f295b40876e1bfc65fb213, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1900348792
 PrefabInstance:
   m_ObjectHideFlags: 0

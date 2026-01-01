@@ -1028,6 +1028,7 @@ GameObject:
   - component: {fileID: 263977320}
   - component: {fileID: 263977322}
   - component: {fileID: 263977321}
+  - component: {fileID: 263977323}
   m_Layer: 0
   m_Name: Falling Platform
   m_TagString: Untagged
@@ -1125,6 +1126,18 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &263977323
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 263977319}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 897f9bb734f295b40876e1bfc65fb213, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &269479142
 GameObject:
   m_ObjectHideFlags: 0
@@ -166457,6 +166470,18 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ce84772e179edaa4c8487e9a8601f22c, type: 3}
+--- !u!114 &1515603628 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2921085620694683630, guid: ce84772e179edaa4c8487e9a8601f22c,
+    type: 3}
+  m_PrefabInstance: {fileID: 1515603627}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e91527145557a04381d75ea472b1139, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1522287295
 GameObject:
   m_ObjectHideFlags: 0
@@ -166944,6 +166969,7 @@ GameObject:
   - component: {fileID: 1754240609}
   - component: {fileID: 1754240610}
   - component: {fileID: 1754240611}
+  - component: {fileID: 1754240612}
   m_Layer: 0
   m_Name: GameController
   m_TagString: Untagged
@@ -166963,6 +166989,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7804c522061bd4c558b5008952406407, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  obstacleManager: {fileID: 1754240612}
+  lifeUi: {fileID: 1515603628}
+  maxLives: 3
   model:
     virtualCamera: {fileID: 1946717928}
     player: {fileID: 838423048}
@@ -167110,6 +167139,22 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1754240612
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1754240606}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4edd9c5da6261664aab0b16c404d10fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  obstacles:
+  - {fileID: 263977323}
+  - {fileID: 1889797503}
+  spikes: []
 --- !u!1 &1759080168
 GameObject:
   m_ObjectHideFlags: 0
@@ -168851,6 +168896,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1889797501}
   - component: {fileID: 1889797502}
+  - component: {fileID: 1889797503}
   m_Layer: 0
   m_Name: Tokens
   m_TagString: Untagged
@@ -168902,6 +168948,18 @@ SortingGroup:
   m_SortingLayer: 0
   m_SortingOrder: 6
   m_SortAtRoot: 0
+--- !u!114 &1889797503
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1889797500}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 897f9bb734f295b40876e1bfc65fb213, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1900348792
 PrefabInstance:
   m_ObjectHideFlags: 0

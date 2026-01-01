@@ -26,10 +26,13 @@ public class ObstacleReset : MonoBehaviour
     }
      public void resetObstacle()
     {
-        // Debug.Log($"[ObstacleReset] ResetObstacle called on: {gameObject.name}");
-        transform.position = startpos;
-        gameObject.SetActive(Startactive);
+        Debug.Log($"[ObstacleReset] ResetObstacle called on: {gameObject.name}");
+        Debug.Log("obstacle reset step1");
 
+        transform.position = startpos;
+        Debug.Log("obstacle reset step2");
+        gameObject.SetActive(Startactive);
+            Debug.Log("obstacle reset step3");
          if (rb != null)
         {
             
@@ -38,7 +41,8 @@ public class ObstacleReset : MonoBehaviour
         rb.linearVelocity = Vector2.zero;
         rb.angularVelocity = 0f;
          
-        Debug.Log(" obstacle");
+        // Debug.Log(" obstacle");
+        
         }
     }
    

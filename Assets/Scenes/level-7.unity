@@ -636,6 +636,7 @@ GameObject:
   - component: {fileID: 15604387}
   - component: {fileID: 15604386}
   - component: {fileID: 15604385}
+  - component: {fileID: 15604388}
   m_Layer: 0
   m_Name: Rising Platform 1
   m_TagString: Untagged
@@ -745,6 +746,18 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &15604388
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 15604383}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 897f9bb734f295b40876e1bfc65fb213, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &18267461 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1658460978237467174, guid: f158aa2be3df6489185ef721f6fd79c1,
@@ -29531,6 +29544,18 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ce84772e179edaa4c8487e9a8601f22c, type: 3}
+--- !u!114 &809799288 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2921085620694683630, guid: ce84772e179edaa4c8487e9a8601f22c,
+    type: 3}
+  m_PrefabInstance: {fileID: 809799287}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e91527145557a04381d75ea472b1139, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &817439413
 GameObject:
   m_ObjectHideFlags: 0
@@ -177572,6 +177597,7 @@ GameObject:
   - component: {fileID: 1523028932}
   - component: {fileID: 1523028931}
   - component: {fileID: 1523028930}
+  - component: {fileID: 1523028933}
   m_Layer: 0
   m_Name: 'MovingPlatform '
   m_TagString: Untagged
@@ -177681,6 +177707,18 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &1523028933
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1523028928}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 897f9bb734f295b40876e1bfc65fb213, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1538438346
 GameObject:
   m_ObjectHideFlags: 0
@@ -180125,6 +180163,7 @@ GameObject:
   - component: {fileID: 1754240609}
   - component: {fileID: 1754240610}
   - component: {fileID: 1754240611}
+  - component: {fileID: 1754240612}
   m_Layer: 0
   m_Name: GameController
   m_TagString: Untagged
@@ -180144,6 +180183,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7804c522061bd4c558b5008952406407, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  obstacleManager: {fileID: 1754240612}
+  lifeUi: {fileID: 809799288}
+  maxLives: 3
   model:
     virtualCamera: {fileID: 1946717928}
     player: {fileID: 838423048}
@@ -180291,6 +180333,22 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1754240612
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1754240606}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4edd9c5da6261664aab0b16c404d10fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  obstacles:
+  - {fileID: 15604388}
+  - {fileID: 1523028933}
+  spikes: []
 --- !u!1 &1757862670
 GameObject:
   m_ObjectHideFlags: 0

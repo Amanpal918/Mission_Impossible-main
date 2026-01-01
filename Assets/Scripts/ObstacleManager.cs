@@ -7,7 +7,9 @@ public class ObstacleManager : MonoBehaviour
 
     public ObstacleReset[] obstacles;
     [Header("Spikes")]
+    
     public SpikeReset[] spikes;
+    public Platformrisingleft[] risingPlatforms;
 
     void Awake()
     {
@@ -38,11 +40,18 @@ public class ObstacleManager : MonoBehaviour
     }
     public void ResetAllSpikes()
     {
-       
+    //    Debug.Log("step 1");
 
         foreach (SpikeReset spike in spikes)
         {
             spike.ResetSpike();
+        }
+    }
+     public void ResetRisingPlatforms()
+    {
+        foreach( var platform in risingPlatforms)
+        {
+            platform.ResetPlatform();
         }
     }
 }

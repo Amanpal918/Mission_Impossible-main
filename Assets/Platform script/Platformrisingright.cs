@@ -55,11 +55,13 @@ public class Platformrisingright : MonoBehaviour
     }
      IEnumerator rightMoveSequence()
     {
+        Debug.Log("entered rightmovesequence");
         while(Vector3.Distance(PlatformObject.position, activePosition) > 0.01f)
         yield return null;
         yield return new WaitForSeconds(delayBeforeright);
 
         // now change target to right
         activePosition = PlatformObject.position + Vector3.right * disAmount;
+         Debug.Log("exited Right");
     }
 }

@@ -1,65 +1,92 @@
 using System.Collections;
-using NUnit.Framework;
 using UnityEngine;
 
 public class Platformrisingleft : MonoBehaviour
 {
-   [Header("Platform Setting")]
-    public Transform PlatformObject;
-     public float riseSpeed = 5f;
+    [Header("Platform Setting")]
+    public Rigidbody2D platformRb;
+    public float riseSpeed = 5f;
     public float riseAmount = 0.3f;
-    public float disAmount = 0.3f; 
-    public float delayBeforeLeft = 0.5f;
-    
-    private bool moveLeft = false;
+    public float leftAmount = 0.3f;
+    public float delayBeforeLeft = 1f;
 
-       private Vector3 activePosition;
+    private Vector2 startPos;
+    private Vector2 upPos;
+    private Vector2 leftPos;
+
     private bool isTriggered = false;
-    void Start()
+    private bool movingUp = false;
+    private bool movingLeft = false;
+
+    void Awake()
     {
-         if(PlatformObject != null)
-         {
-            activePosition = PlatformObject.position + Vector3.up* riseAmount ;
-            PlatformObject.gameObject.SetActive(false);
-        }
-        
+        startPos = platformRb.position;
+        upPos = startPos + Vector2.up * riseAmount;
+        leftPos = upPos + Vector2.left * leftAmount;
     }
 
-    // Update is called once per frame
-    void Update()
+    void OnEnable()
     {
-         if(isTriggered)
+        ResetPlatform();
+    }
+
+    void FixedUpdate()
+    {
+        if (movingUp)
         {
-            PlatformObject.position = Vector3.MoveTowards( PlatformObject.position,activePosition,riseSpeed * Time.deltaTime
-            );  
-        }
-            if(moveLeft)
+            platformRb.MovePosition(
+                Vector2.MoveTowards(
+                    platformRb.position,
+                    upPos,
+                    riseSpeed * Time.fixedDeltaTime
+                )
+            );
+
+            if (Vector2.Distance(platformRb.position, upPos) < 0.01f)
             {
-                PlatformObject.position = Vector3.MoveTowards( PlatformObject.position,activePosition,riseSpeed * Time.deltaTime
-                );  
+                movingUp = false;
+                StartCoroutine(LeftMoveSequence());
             }
-        
-    }
-    
-      private void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.CompareTag("Player"))
+        }
+
+        if (movingLeft)
         {
-            
-                PlatformObject.gameObject.SetActive(true);
-                isTriggered = true;
-                StartCoroutine(leftMoveSequence());
-            
-            isTriggered = true;
+            platformRb.MovePosition(
+                Vector2.MoveTowards(
+                    platformRb.position,
+                    leftPos,
+                    riseSpeed * Time.fixedDeltaTime
+                )
+            );
         }
     }
-     IEnumerator leftMoveSequence()
-    {
-        while(Vector3.Distance(PlatformObject.position, activePosition) > 0.01f)
-        yield return null;
-        yield return new WaitForSeconds(delayBeforeLeft);
 
-        // now change target to LEFT
-        activePosition = PlatformObject.position + Vector3.left * disAmount;
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Player") && !isTriggered)
+        {
+            Debug.Log("Trigger Entered");
+            isTriggered = true;
+            platformRb.gameObject.SetActive(true);
+            movingUp = true;
+        }
+    }
+
+    IEnumerator LeftMoveSequence()
+    {
+        yield return new WaitForSeconds(delayBeforeLeft);
+        Debug.Log("Moving Left");
+        movingLeft = true;
+    }
+
+    public void ResetPlatform()
+    {
+        Debug.Log("Resetting Platform");
+        StopAllCoroutines();
+        platformRb.position = startPos;
+        platformRb.gameObject.SetActive(false);
+        isTriggered = false;
+        movingUp = false;
+        movingLeft = false;
     }
 }

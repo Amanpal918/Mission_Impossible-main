@@ -537,7 +537,7 @@ GameObject:
   - component: {fileID: 185665560}
   - component: {fileID: 185665561}
   m_Layer: 0
-  m_Name: spike
+  m_Name: spike  1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -734,7 +734,7 @@ GameObject:
   - component: {fileID: 230528640}
   - component: {fileID: 230528644}
   m_Layer: 0
-  m_Name: spike (4)
+  m_Name: spike 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -28957,7 +28957,7 @@ GameObject:
   - component: {fileID: 1181352001}
   - component: {fileID: 1181352005}
   m_Layer: 0
-  m_Name: spike (3)
+  m_Name: spike 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -170428,7 +170428,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7804c522061bd4c558b5008952406407, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  obstacleManager: {fileID: 0}
+  obstacleManager: {fileID: 1754240612}
   lifeUi: {fileID: 264628954}
   maxLives: 3
   model:

@@ -48,13 +48,15 @@
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\6000.0.59f2\Editor\Data\Tools\Unity.SourceGenerators\Unity.UIToolkit.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\SpikesScript\Spiketrapmoveright.cs" />
     <Compile Include="Assets\Scripts\Gameplay\PlayerSpawn.cs" />
-    <Compile Include="Assets\spikes script\spikemoveleft.cs" />
     <Compile Include="Assets\Scripts\Core\Simulation.InstanceRegister.cs" />
     <Compile Include="Assets\Mod Assets\Mod Resources\Scripts\Platformer\Jiggler.cs" />
     <Compile Include="Assets\Platform script\Platformrising.cs" />
     <Compile Include="Assets\Scripts\Gameplay\PlayerEnteredVictoryZone.cs" />
+    <Compile Include="Assets\SpikesScript\SpikeReset.cs" />
     <Compile Include="Assets\Platform script\Platformrisingleft.cs" />
+    <Compile Include="Assets\SpikesScript\Spike left right.cs" />
     <Compile Include="Assets\Mod Assets\Mod Resources\Scripts\Platformer\EmitParticlesOnLand.cs" />
     <Compile Include="Assets\Scripts\UI\MainUIController.cs" />
     <Compile Include="Assets\Scripts\Gameplay\PlayerEnteredDeathZone.cs" />
@@ -71,8 +73,9 @@
     <Compile Include="Assets\Scripts\Mechanics\EnemyController.cs" />
     <Compile Include="Assets\Scripts\Gameplay\PlayerDeath.cs" />
     <Compile Include="Assets\Scripts\Gameplay\PlayerTokenCollision.cs" />
+    <Compile Include="Assets\Scripts\Retry.cs" />
     <Compile Include="Assets\Scripts\Mechanics\VictoryZone.cs" />
-    <Compile Include="Assets\spikes script\SpikeReset.cs" />
+    <Compile Include="Assets\SpikesScript\spikemoveleft.cs" />
     <Compile Include="Assets\Scripts\VictoryScript.cs" />
     <Compile Include="Assets\Scripts\Gameplay\PlayerEnemyCollision.cs" />
     <Compile Include="Assets\Scripts\Mechanics\Health.cs" />
@@ -80,10 +83,8 @@
     <Compile Include="Assets\Scripts\Mechanics\KinematicObject.cs" />
     <Compile Include="Assets\Mod Assets\Mod Resources\Scripts\Platformer\PlatformerJumpPad.cs" />
     <Compile Include="Assets\Scripts\Core\HeapQueue.cs" />
-    <Compile Include="Assets\spikes script\Spike trap move.cs" />
     <Compile Include="Assets\Scripts\Mechanics\SpawnPoint.cs" />
     <Compile Include="Assets\Scripts\Gameplay\PlayerStopJump.cs" />
-    <Compile Include="Assets\spikes script\Spike left right.cs" />
     <Compile Include="Assets\Scripts\Tokendestroy.cs" />
     <Compile Include="Assets\Scripts\ObstacleManager.cs" />
     <Compile Include="Assets\Scripts\Mechanics\PlayAudioClip.cs" />
@@ -107,12 +108,12 @@
     <Compile Include="Assets\Scripts\tokenactivation.cs" />
     <Compile Include="Assets\Mod Assets\Mod Resources\Scripts\Backend\TemplateEditorDetection.cs" />
     <Compile Include="Assets\Scripts\Mechanics\GameController.cs" />
-    <Compile Include="Assets\spikes script\SpikeTrap.cs" />
     <Compile Include="Assets\Scripts\Gameplay\PlayerLanded.cs" />
     <Compile Include="Assets\Scripts\SplashTimer.cs" />
     <Compile Include="Assets\Scripts\View\AnimatedTile.cs" />
     <Compile Include="Assets\Scripts\Mechanics\PlayerController.cs" />
     <Compile Include="Assets\Scripts\Gameplay\EnemyDeath.cs" />
+    <Compile Include="Assets\SpikesScript\SpikeTrap.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

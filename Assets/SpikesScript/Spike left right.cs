@@ -8,13 +8,18 @@ public class Spikeleftright : MonoBehaviour
     public float distance = 1f;  // how far it moves left & right
 
     private Vector3 startPos;
-    private bool isTriggered = false;
+    private bool isTriggered ;
 
-    void Start()
+   void Awake()
     {
         startPos = spikeObject.position;
     }
 
+    void OnEnable()
+    {
+        isTriggered = false;
+        spikeObject.position = startPos;
+    }
     void Update()
     {
         if (isTriggered)
@@ -29,6 +34,7 @@ public class Spikeleftright : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             isTriggered = true;
+            spikeObject.gameObject.SetActive(true);
         }
     }
 }

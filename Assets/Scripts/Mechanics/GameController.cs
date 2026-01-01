@@ -58,24 +58,25 @@ namespace Platformer.Gameplay
         {
             currentLives --;
             lifeUi.UpdateHearts(currentLives);
-            Debug.Log("Player Died - GameController");
+            // Debug.Log("Player Died - GameController");
          
         }
         public  void Reswapn()
         {
             var player = model.player;
-            // Debug.Log("step 1");
+            
             if (!player.health.IsAlive)
                 return;
                 currentLives --;
                 lifeUi.UpdateHearts(currentLives);
 
-                ObstacleManager.Instance.ResetAllObstaclesWithDelay(2);
-                // Debug.Log("gamecontrooller wala ");
-                // Debug.Log("step 2");
+                // ObstacleManager.Instance.ResetAllObstaclesWithDelay(2);
+                // ObstacleManager.Instance.ResetAllSpikes(); 
+                // ObstacleManager.Instance.ResetRisingPlatforms();
+                
             //  if(currentLives <=0)
             // {
-                // Debug.Log("step3.3");
+                
                 player.health.Die();
                 model.virtualCamera.Follow = null;
                 model.virtualCamera.LookAt = null;
@@ -86,7 +87,7 @@ namespace Platformer.Gameplay
                     player.audioSource.PlayOneShot(player.ouchAudio);
                 player.animator.SetTrigger("hurt");
                 player.animator.SetBool("dead", true);
-                // Debug.Log("step.3");
+               
                 Simulation.Schedule<PlayerSpawn>(2f);
             // }
         }
