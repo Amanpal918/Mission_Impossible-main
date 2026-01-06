@@ -1,5 +1,5 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
+
 public class PlatformTrigger : MonoBehaviour
 {
     public Rigidbody2D platformrb;
@@ -10,18 +10,9 @@ public class PlatformTrigger : MonoBehaviour
         {
             platformrb.bodyType = RigidbodyType2D.Dynamic;
             platformrb.gravityScale =10f;
-            // Destroy(gameObject);
+            
         }
     }
-    void Start()
-    {
-        //  SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-    }
-    // here's a comment
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+  
 }
+    

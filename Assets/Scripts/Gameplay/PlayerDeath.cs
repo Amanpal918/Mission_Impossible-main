@@ -45,6 +45,7 @@ namespace Platformer.Gameplay
                 // Debug.Log("Spikes Reset");
                 ObstacleManager.Instance.ResetAllSpikes();
                 ObstacleManager.Instance.ResetRisingPlatforms();
+                ObstacleManager.Instance.ResetAllTokens();
 
                 // respwan the player 
                 Simulation.Schedule<PlayerSpawn>(2);

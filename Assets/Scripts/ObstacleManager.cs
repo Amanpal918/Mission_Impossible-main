@@ -6,10 +6,14 @@ public class ObstacleManager : MonoBehaviour
      public static ObstacleManager Instance;
 
     public ObstacleReset[] obstacles;
-    [Header("Spikes")]
+    
     
     public SpikeReset[] spikes;
     public Platformrisingleft[] risingPlatforms;
+
+ 
+    public TokenReset[] tokens;
+    public tokenactivation[] token1;
 
     void Awake()
     {
@@ -36,9 +40,33 @@ public class ObstacleManager : MonoBehaviour
         {
             obstacle.resetObstacle();
         }
-        
+   
     }
-    public void ResetAllSpikes()
+
+    public void  ResetAllTokens()
+    {
+        foreach (var token in tokens)
+        {
+            if (token != null)
+                token.ResetToken();        
+        }
+        Diamondrightmove[] movingDiamonds = FindObjectsOfType<Diamondrightmove>();
+    foreach (var mover in movingDiamonds)
+    {
+        // Debug.Log("Resetting Diamond Movement");
+        mover.ResetMovement();
+    }
+    tokenactivation token1 = FindObjectOfType<tokenactivation>();
+        {
+        if (token1 != null)
+            {
+                
+                 token1.ResetToken1();
+                 Debug.Log("Resetting Token Activation");
+            }
+        }
+    }
+        public void ResetAllSpikes()
     {
     //    Debug.Log("step 1");
 

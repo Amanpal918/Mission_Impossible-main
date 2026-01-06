@@ -27,7 +27,16 @@ public class tokenactivation : MonoBehaviour
             {
                 token.SetActive(true);
             }
-            Destroy(gameObject);
+            
         }
+    }
+    public void ResetToken1()
+    {
+        Debug.Log("Deactivating Tokens");
+    foreach (GameObject token in tokenobject)
+    {
+        if (token != null)
+            token.SetActive(false);
+    }
     }
 }

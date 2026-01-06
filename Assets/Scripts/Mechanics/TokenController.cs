@@ -1,3 +1,4 @@
+using Unity.VisualScripting.Antlr3.Runtime;
 using UnityEngine;
 
 namespace Platformer.Mechanics
@@ -16,6 +17,7 @@ namespace Platformer.Mechanics
         [Tooltip("Instances of tokens which are animated. If empty, token instances are found and loaded at runtime.")]
         public TokenInstance[] tokens;
 
+
         float nextFrameTime = 0;
 
         [ContextMenu("Find All Tokens")]
@@ -24,8 +26,9 @@ namespace Platformer.Mechanics
             tokens = UnityEngine.Object.FindObjectsByType<TokenInstance>(FindObjectsInactive.Exclude, FindObjectsSortMode.None);
         }
 
-        void Awake()
+        public void Awake()
         {
+            Debug.Log("TokenController Awake");
             //if tokens are empty, find all instances.
             //if tokens are not empty, they've been added at editor time.
             if (tokens.Length == 0)
@@ -54,7 +57,7 @@ namespace Platformer.Mechanics
                         if (token.collected && token.frame == token.sprites.Length - 1)
                         {
                             token.gameObject.SetActive(false);
-                            tokens[i] = null;
+                            // tokens[i] = null;
                         }
                         else
                         {
@@ -64,6 +67,32 @@ namespace Platformer.Mechanics
                 }
                 //calculate the time of the next frame.
                 nextFrameTime += 1f / frameRate;
+            }
+        }
+
+        public void Testing()
+        {
+            // Debug.Log("TokenController Testing Awake");
+            if (tokens.Length == 0)
+                FindAllTokensInScene();
+            //Register all tokens so they can work with this controller.
+            // Debug.Log("TokenController Testing");
+            for (var i = 0; i<tokens.Length; i++)
+             {
+            //     Debug.Log("i value"+i);
+            //     Debug.Log("Token Reset in TokenController");
+            //     tokens[i].tokenIndex = 0;
+            //     tokens[i].controller = this;
+            // }
+            if (tokens[i] != null)
+            {
+                tokens[i].tokenIndex = i;
+                tokens[i].controller = this;
+            }
+            else
+            {
+                Debug.LogWarning("Token at index " + i + " is missing from the controller!");
+            }
             }
         }
 

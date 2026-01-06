@@ -20,29 +20,20 @@ public class ObstacleReset : MonoBehaviour
         }
         Debug.Log($"[ObstacleReset] Saved start data for: {gameObject.name}");
     } 
-     public void ResetWithDelay()
-    {
-        Invoke(nameof(resetObstacle),2f);
-    }
+   
      public void resetObstacle()
     {
-        Debug.Log($"[ObstacleReset] ResetObstacle called on: {gameObject.name}");
-        Debug.Log("obstacle reset step1");
-
+        
         transform.position = startpos;
-        Debug.Log("obstacle reset step2");
-        gameObject.SetActive(Startactive);
-            Debug.Log("obstacle reset step3");
-         if (rb != null)
-        {
+      gameObject.SetActive(Startactive);
             
+        // for spikes
+         if (rb != null)
+        {   
         rb.bodyType = startBodyType;
         rb.gravityScale = startGravity;
         rb.linearVelocity = Vector2.zero;
-        rb.angularVelocity = 0f;
-         
-        // Debug.Log(" obstacle");
-        
+        rb.angularVelocity = 0f;  
         }
     }
    

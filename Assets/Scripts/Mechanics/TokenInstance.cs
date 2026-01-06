@@ -40,6 +40,7 @@ namespace Platformer.Mechanics
 
         void OnTriggerEnter2D(Collider2D other)
         {
+            // Debug.Log("Token Triggered");
             //only exectue OnPlayerEnter if the player collides with this token.
             var player = other.gameObject.GetComponent<PlayerController>();
             if (player != null) OnPlayerEnter(player);
