@@ -70,9 +70,9 @@ namespace Platformer.Gameplay
                 currentLives --;
                 lifeUi.UpdateHearts(currentLives);
 
-                // ObstacleManager.Instance.ResetAllObstaclesWithDelay(2);
-                // ObstacleManager.Instance.ResetAllSpikes(); 
-                // ObstacleManager.Instance.ResetRisingPlatforms();
+                ObstacleManager.Instance.ResetAllObstaclesWithDelay(2);
+                ObstacleManager.Instance.ResetAllSpikes(); 
+                ObstacleManager.Instance.ResetRisingPlatforms();
                 
             //  if(currentLives <=0)
             // {

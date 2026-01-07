@@ -42,7 +42,7 @@ namespace Platformer.Gameplay
                 
                   
                 ObstacleManager.Instance.ResetAllObstaclesWithDelay(2);
-                // Debug.Log("Spikes Reset");
+                Debug.Log("Spikes Reset");
                 ObstacleManager.Instance.ResetAllSpikes();
                 ObstacleManager.Instance.ResetRisingPlatforms();
                 ObstacleManager.Instance.ResetAllTokens();

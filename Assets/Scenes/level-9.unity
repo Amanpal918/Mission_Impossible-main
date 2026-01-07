@@ -26824,7 +26824,7 @@ Transform:
   m_GameObject: {fileID: 825487852}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.0069583, y: 0.13185899, z: -0.11338363}
+  m_LocalPosition: {x: -0.0069583, y: 0.043, z: -0.11338363}
   m_LocalScale: {x: 0.24849372, y: 0.09130471, z: 0.1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -26879,7 +26879,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 2
-  m_Size: {x: 4.1108007, y: 6}
+  m_Size: {x: 4.1108007, y: 8}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -27900,6 +27900,41 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Pause Button
+      objectReference: {fileID: 0}
+    - target: {fileID: 5736863653264152165, guid: ce84772e179edaa4c8487e9a8601f22c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5899773302123721550, guid: ce84772e179edaa4c8487e9a8601f22c,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5899773302123721550, guid: ce84772e179edaa4c8487e9a8601f22c,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5899773302123721550, guid: ce84772e179edaa4c8487e9a8601f22c,
+        type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5899773302123721550, guid: ce84772e179edaa4c8487e9a8601f22c,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5899773302123721550, guid: ce84772e179edaa4c8487e9a8601f22c,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 1180
+      objectReference: {fileID: 0}
+    - target: {fileID: 5899773302123721550, guid: ce84772e179edaa4c8487e9a8601f22c,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 538
       objectReference: {fileID: 0}
     - target: {fileID: 7030279451712098998, guid: ce84772e179edaa4c8487e9a8601f22c,
         type: 3}
@@ -169988,7 +170023,7 @@ Transform:
   m_GameObject: {fileID: 1470562308}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.0069583, y: 0.13185899, z: -0.11338363}
+  m_LocalPosition: {x: -0.0069583, y: 0.039, z: -0.11338363}
   m_LocalScale: {x: 0.24849372, y: 0.09130471, z: 0.1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -170043,7 +170078,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 2
-  m_Size: {x: 4.1, y: 6}
+  m_Size: {x: 4.1, y: 8}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -173477,6 +173512,41 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 318776227}
     m_Modifications:
+    - target: {fileID: 2301984331696963202, guid: 57025d5ba34af6b41a3c8929c1fe9e73,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2301984331696963202, guid: 57025d5ba34af6b41a3c8929c1fe9e73,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2301984331696963202, guid: 57025d5ba34af6b41a3c8929c1fe9e73,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1986705778}
+    - target: {fileID: 2301984331696963202, guid: 57025d5ba34af6b41a3c8929c1fe9e73,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2301984331696963202, guid: 57025d5ba34af6b41a3c8929c1fe9e73,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: RetryLevel
+      objectReference: {fileID: 0}
+    - target: {fileID: 2301984331696963202, guid: 57025d5ba34af6b41a3c8929c1fe9e73,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Retry, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2301984331696963202, guid: 57025d5ba34af6b41a3c8929c1fe9e73,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 3734919329192465489, guid: 57025d5ba34af6b41a3c8929c1fe9e73,
         type: 3}
       propertyPath: m_Name
@@ -173585,7 +173655,11 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5110896571746954595, guid: 57025d5ba34af6b41a3c8929c1fe9e73,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1986705778}
   m_SourcePrefab: {fileID: 100100000, guid: 57025d5ba34af6b41a3c8929c1fe9e73, type: 3}
 --- !u!1 &1986705775 stripped
 GameObject:
@@ -173599,6 +173673,24 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 1986705774}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1986705777 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5110896571746954595, guid: 57025d5ba34af6b41a3c8929c1fe9e73,
+    type: 3}
+  m_PrefabInstance: {fileID: 1986705774}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1986705778
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1986705777}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04570e6c3ce0d5b43aa5bb25a7eb28fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1997801710
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -174680,5 +174772,5 @@ SceneRoots:
   - {fileID: 118128693}
   - {fileID: 877507032}
   - {fileID: 1126029876}
-  - {fileID: 1183600541}
   - {fileID: 7447262840131151456}
+  - {fileID: 1183600541}

@@ -12,22 +12,28 @@ public class SpikeTrap : MonoBehaviour
     // How high it goes (0.6 is good for just peeking out)
     public float riseAmount = 0.3f; 
 
-    private Vector3 activePosition;
-    private bool isTriggered = false;
+
+    private Vector3 startPos;
+    private Vector3 targetPos;
+    private bool isTriggered;
+
 
     void Start()
     {
-        // Safety check to prevent errors if you forgot to drag the spike in
-        if (spikeObject != null)
-        {
-            // Calculate where the spike should go (upwards)
-            activePosition = spikeObject.position + Vector3.up* riseAmount;
-            spikeObject.gameObject.SetActive(false);
-        }
-        else
-        {
-            Debug.LogError("Spike Object not assigned on " + gameObject.name);
-        }
+        spikeObject.gameObject.SetActive(false);
+    }
+    void Awake()
+    {
+        startPos = spikeObject.position;
+        targetPos = startPos + Vector3.up * riseAmount;
+    }
+
+    void OnEnable()
+    {
+        
+        isTriggered = false;
+        spikeObject.position = startPos;
+        spikeObject.gameObject.SetActive(true);
     }
 
     void Update()
@@ -37,7 +43,7 @@ public class SpikeTrap : MonoBehaviour
         {
             spikeObject.position = Vector3.MoveTowards(
                 spikeObject.position, 
-                activePosition, 
+                targetPos, 
                 riseSpeed * Time.deltaTime
             );
         }

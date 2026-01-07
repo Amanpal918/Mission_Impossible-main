@@ -171,6 +171,7 @@ namespace Platformer.Mechanics
         }
         public void JumpButton()
         {
+             Debug.Log("jump  btn pressed");
             mobileJump = true;
         }
       

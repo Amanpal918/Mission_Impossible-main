@@ -45,6 +45,7 @@ public class ObstacleManager : MonoBehaviour
 
     public void  ResetAllTokens()
     {
+        
         foreach (var token in tokens)
         {
             if (token != null)
@@ -66,9 +67,10 @@ public class ObstacleManager : MonoBehaviour
             }
         }
     }
+    
         public void ResetAllSpikes()
     {
-    //    Debug.Log("step 1");
+       Debug.Log("step 2");
 
         foreach (SpikeReset spike in spikes)
         {

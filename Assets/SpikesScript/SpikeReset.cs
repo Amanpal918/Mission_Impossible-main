@@ -3,6 +3,7 @@ using UnityEngine;
 public class SpikeReset : MonoBehaviour
 {
     private Vector3 startPos;
+     
     public void Start()
     {
 
@@ -13,6 +14,7 @@ public class SpikeReset : MonoBehaviour
     void Awake()
     {
         startPos = transform.position; // save initial position
+         
     }
 
     public void ResetSpike()
@@ -24,5 +26,6 @@ public class SpikeReset : MonoBehaviour
 
         // Disable spike
         gameObject.SetActive(false);
+   
     }
 }
