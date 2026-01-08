@@ -87,6 +87,7 @@
     <Compile Include="Assets\Scripts\Mechanics\SpawnPoint.cs" />
     <Compile Include="Assets\Scripts\Gameplay\PlayerStopJump.cs" />
     <Compile Include="Assets\Scripts\PauseManager.cs" />
+    <Compile Include="Assets\Platform script\Trigscript.cs" />
     <Compile Include="Assets\Scripts\Tokendestroy.cs" />
     <Compile Include="Assets\Scripts\ObstacleManager.cs" />
     <Compile Include="Assets\Scripts\Mechanics\PlayAudioClip.cs" />

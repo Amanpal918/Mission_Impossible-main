@@ -12,16 +12,23 @@ public class MovingPlatformAttach : MonoBehaviour
 
     private void OnCollisionExit2D(Collision2D collision)
     {
-       
-    }
-      public void DetachPlayer()
+        if (collision.gameObject.CompareTag("Player"))
     {
-        foreach (Transform child in transform)
+        if (collision.transform.parent == transform)
+            collision.transform.SetParent(null);
+    }
+    }
+      private void OnDisable()
+    {
+        // SAFELY detach player when platform is disabled
+        if (transform.childCount > 0)
         {
-            if (child.CompareTag("Player"))
+            foreach (Transform child in transform)
             {
-                child.SetParent(null);
+                if (child.CompareTag("Player"))
+                    child.SetParent(null);
             }
         }
     }
+     
 }

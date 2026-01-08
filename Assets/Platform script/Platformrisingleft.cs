@@ -18,31 +18,38 @@ public class Platformrisingleft : MonoBehaviour
     private bool movingUp = false;
     private bool movingLeft = false;
 
+    // --- ADDED FOR PLAYER DRAGGING ---
+    private Vector2 previousPosition;
+    private Transform playerTransform;
+
+    void Start()
+    {
+        startPos = platformRb.position;
+        platformRb.gameObject.SetActive(false);
+    }
+
     void Awake()
     {
         startPos = platformRb.position;
+        previousPosition = startPos;
+    }
+
+    void RecalculatePositions()
+    {
         upPos = startPos + Vector2.up * riseAmount;
         leftPos = upPos + Vector2.left * leftAmount;
     }
 
-    void OnEnable()
-    {
-        ResetPlatform();
-    }
-
     void FixedUpdate()
     {
+    
+
         if (movingUp)
         {
-            platformRb.MovePosition(
-                Vector2.MoveTowards(
-                    platformRb.position,
-                    upPos,
-                    riseSpeed * Time.fixedDeltaTime
-                )
-            );
+            Vector2 nextPos = Vector2.MoveTowards(platformRb.position, upPos, riseSpeed * Time.fixedDeltaTime);
+            platformRb.MovePosition(nextPos);
 
-            if (Vector2.Distance(platformRb.position, upPos) < 0.01f)
+            if (Vector2.Distance(platformRb.position, upPos) < 0.05f)
             {
                 movingUp = false;
                 StartCoroutine(LeftMoveSequence());
@@ -51,42 +58,83 @@ public class Platformrisingleft : MonoBehaviour
 
         if (movingLeft)
         {
-            platformRb.MovePosition(
-                Vector2.MoveTowards(
-                    platformRb.position,
-                    leftPos,
-                    riseSpeed * Time.fixedDeltaTime
-                )
-            );
+            Vector2 nextPos = Vector2.MoveTowards(platformRb.position, leftPos, riseSpeed * Time.fixedDeltaTime);
+            platformRb.MovePosition(nextPos);
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
+        // --- ADDED LOGIC TO DRAG PLAYER ---
+    //     if (playerTransform != null)
+    //     {
+    //         // Calculate how much the platform moved this frame
+    //         Vector2 platformMovement = currentPos - previousPosition;
+    //         // Apply that same movement to the player
+    //         playerTransform.position += (Vector3)platformMovement;
+    //     }
+
+    //     previousPosition = platformRb.position;
+    // }
+
+    // // --- DETECT PLAYER ON TOP ---
+    // private void OnCollisionEnter2D(Collision2D collision)
+    // {
+    //     if (collision.gameObject.CompareTag("Player"))
+    //     {
+    //         playerTransform = collision.transform;
+    //     }
+    // }
+
+    // private void OnCollisionExit2D(Collision2D collision)
+    // {
+    //     if (collision.gameObject.CompareTag("Player"))
+    //     {
+    //         playerTransform = null;
+    //     }
+    // }
+    // --- THIS REPLACES THE DRAG LOGIC ---
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (other.CompareTag("Player") && !isTriggered)
+        if (collision.gameObject.CompareTag("Player"))
         {
-            Debug.Log("Trigger Entered");
-            isTriggered = true;
-            platformRb.gameObject.SetActive(true);
-            movingUp = true;
+            // Makes the player move WITH the platform automatically
+            collision.transform.SetParent(this.transform);
         }
+    }
+
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            // Returns the player to world space when they jump off
+            collision.transform.SetParent(null);
+        }
+    }
+
+    public void ActivatePlatform()
+    {
+        if (isTriggered) return;
+        isTriggered = true;
+        RecalculatePositions();
+        movingUp = true;
+        movingLeft = false;
+        platformRb.gameObject.SetActive(true);
     }
 
     IEnumerator LeftMoveSequence()
     {
         yield return new WaitForSeconds(delayBeforeLeft);
-        Debug.Log("Moving Left");
         movingLeft = true;
     }
 
     public void ResetPlatform()
     {
-        Debug.Log("Resetting Platform");
         StopAllCoroutines();
-        platformRb.position = startPos;
-        platformRb.gameObject.SetActive(false);
+        platformRb.transform.position = startPos;
+        previousPosition = startPos; // Reset this too
+        // playerTransform = null;
         isTriggered = false;
         movingUp = false;
         movingLeft = false;
+        platformRb.gameObject.SetActive(false);
     }
 }
