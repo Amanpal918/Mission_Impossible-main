@@ -10,8 +10,8 @@ public class ObstacleManager : MonoBehaviour
     
     public SpikeReset[] spikes;
     public Platformrisingleft[] risingPlatforms;
+    public Platformrisingright[] risingPlatformsright;
 
- 
     public TokenReset[] tokens;
     public tokenactivation[] token1;
 
@@ -80,6 +80,10 @@ public class ObstacleManager : MonoBehaviour
      public void ResetRisingPlatforms()
     {
         foreach( var platform in risingPlatforms)
+        {
+            platform.ResetPlatform();
+        }
+        foreach( var platform in risingPlatformsright)
         {
             platform.ResetPlatform();
         }

@@ -635,7 +635,6 @@ GameObject:
   - component: {fileID: 15604384}
   - component: {fileID: 15604387}
   - component: {fileID: 15604386}
-  - component: {fileID: 15604385}
   - component: {fileID: 15604388}
   m_Layer: 0
   m_Name: Rising Platform 1
@@ -661,18 +660,6 @@ Transform:
   - {fileID: 817439414}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &15604385
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 15604383}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1ffbcf4c5579df6458af8eb23875d6ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!61 &15604386
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1639,7 +1626,7 @@ Transform:
   m_GameObject: {fileID: 118128689}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 13.19, y: 0.75, z: 0}
+  m_LocalPosition: {x: 12.79, y: 0.54, z: 0}
   m_LocalScale: {x: 0.47, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1660,7 +1647,7 @@ MonoBehaviour:
   PlatformObject: {fileID: 15604384}
   riseSpeed: 10
   riseAmount: 1.4
-  waittime: 0.8
+  waittime: 0.6
 --- !u!1001 &120155709
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -177918,7 +177905,6 @@ GameObject:
   - component: {fileID: 1523028929}
   - component: {fileID: 1523028932}
   - component: {fileID: 1523028931}
-  - component: {fileID: 1523028930}
   - component: {fileID: 1523028933}
   m_Layer: 0
   m_Name: 'MovingPlatform '
@@ -177944,18 +177930,6 @@ Transform:
   - {fileID: 1210483715}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1523028930
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1523028928}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1ffbcf4c5579df6458af8eb23875d6ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!61 &1523028931
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -178038,9 +178012,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 1523028928}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 897f9bb734f295b40876e1bfc65fb213, type: 3}
+  m_Script: {fileID: 11500000, guid: 4adc1493137daa04e900835310d81f6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  platformRb: {fileID: 1523028932}
+  riseSpeed: 5
+  riseAmount: 1.9
+  rightAmount: 6
+  delayBeforeright: 0.5
 --- !u!1 &1538438346
 GameObject:
   m_ObjectHideFlags: 0
@@ -178856,14 +178835,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1604230137}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4adc1493137daa04e900835310d81f6f, type: 3}
+  m_Script: {fileID: 11500000, guid: 24c46189dd2eb3f41881d424a804d144, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlatformObject: {fileID: 1523028929}
-  riseSpeed: 5
-  riseAmount: 2
-  disAmount: 6
-  delayBeforeright: 0.5
+  platform: {fileID: 1523028933}
 --- !u!1001 &1605598987
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -180669,9 +180644,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   obstacles:
   - {fileID: 15604388}
-  - {fileID: 1523028933}
+  - {fileID: 0}
   spikes: []
   risingPlatforms: []
+  risingPlatformsright:
+  - {fileID: 1523028933}
   tokens: []
   token1: []
 --- !u!1 &1757862670
