@@ -31,4 +31,9 @@ public class PauseManager : MonoBehaviour
         // Implement settings menu opening logic here
         Debug.Log("Settings menu opened.");
     }
+    public void GotoMainMenu()
+    {
+    Time.timeScale = 1f;
+    SceneManager.LoadScene("MainMenu");
+    }
 }
