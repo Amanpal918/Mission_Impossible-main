@@ -1,19 +1,19 @@
-using System;
-using Platformer.Gameplay;
-// using Platformer.Mechanics;
 using UnityEngine;
-
+using Platformer.Core;  
+    
+namespace Platformer.Gameplay
+{
 public class Spike : MonoBehaviour
 {
     private void OnTriggerEnter2D(Collider2D other)
     {
         if(other.CompareTag("Player"))
         {
-
-            GameController.Instance.Reswapn();       
+            Simulation.Schedule<PlayerDeath>();
             Debug.Log("Player Hit Spike");
     }
         }
     }
 
+}
 

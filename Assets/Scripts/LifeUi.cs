@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class LifeUi : MonoBehaviour
 {
@@ -31,6 +32,11 @@ void showGameOver()
     {
         gameOverPanel.SetActive(true);
         Time.timeScale = 0f;
+    }
+     public void GoToLevelSelect()
+    {
+        Time.timeScale = 1f; // IMPORTANT
+        SceneManager.LoadScene("LevelSelect");
     }
 
 }

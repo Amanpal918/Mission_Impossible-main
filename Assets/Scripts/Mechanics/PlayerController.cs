@@ -75,7 +75,7 @@ namespace Platformer.Mechanics
                     jumpState = JumpState.PrepareToJump;
                     mobileJump = false;
                 }
-                else if (m_JumpAction.WasReleasedThisFrame())
+                else if (m_JumpAction.WasReleasedThisFrame() || stopJump)
                 {
                     stopJump = true;
                     Schedule<PlayerStopJump>().player = this;
@@ -169,10 +169,14 @@ namespace Platformer.Mechanics
         {
             mobileMove = 0f;
         }
-        public void JumpButton()
+        public void JumpButtonDown()
         {
              Debug.Log("jump  btn pressed");
             mobileJump = true;
+        }
+        public void JumpButtonUp()
+        {
+            stopJump= true;
         }
       
     }

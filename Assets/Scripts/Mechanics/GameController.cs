@@ -63,33 +63,33 @@ namespace Platformer.Gameplay
         }
         public  void Reswapn()
         {
-            var player = model.player;
+            // var player = model.player;
             
-            if (!player.health.IsAlive)
-                return;
-                currentLives --;
-                lifeUi.UpdateHearts(currentLives);
+            // if (!player.health.IsAlive)
+            //     return;
+            //     currentLives --;
+            //     lifeUi.UpdateHearts(currentLives);
 
-                ObstacleManager.Instance.ResetAllObstaclesWithDelay(2);
-                ObstacleManager.Instance.ResetAllSpikes(); 
-                ObstacleManager.Instance.ResetRisingPlatforms();
+            //     ObstacleManager.Instance.ResetAllObstaclesWithDelay(2);
+            //     ObstacleManager.Instance.ResetAllSpikes(); 
+            //     ObstacleManager.Instance.ResetRisingPlatforms();
                 
             //  if(currentLives <=0)
             // {
                 
-                player.health.Die();
-                model.virtualCamera.Follow = null;
-                model.virtualCamera.LookAt = null;
-                // player.collider.enabled = false;
-                player.controlEnabled = false;
+                // player.health.Die();
+                // model.virtualCamera.Follow = null;
+                // model.virtualCamera.LookAt = null;
+                // // player.collider.enabled = false;
+                // player.controlEnabled = false;
 
-                if (player.audioSource && player.ouchAudio)
-                    player.audioSource.PlayOneShot(player.ouchAudio);
-                player.animator.SetTrigger("hurt");
-                player.animator.SetBool("dead", true);
+                // if (player.audioSource && player.ouchAudio)
+                //     player.audioSource.PlayOneShot(player.ouchAudio);
+                // player.animator.SetTrigger("hurt");
+                // player.animator.SetBool("dead", true);
                
-                Simulation.Schedule<PlayerSpawn>(2f);
             // }
+                // Simulation.Schedule<PlayerSpawn>(2f);
         }
     }
 }

@@ -48,7 +48,7 @@ namespace Platformer.Gameplay
                 ObstacleManager.Instance.ResetAllTokens();
 
                 // respwan the player 
-                Simulation.Schedule<PlayerSpawn>(2);
+                Simulation.Schedule<PlayerSpawn>(2f);
        
             }
         }

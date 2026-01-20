@@ -1,4 +1,4 @@
-using Mono.Cecil.Cil;
+
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -7,7 +7,7 @@ public class LevelButton : MonoBehaviour
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     public int levelNumber; 
-     public GameObject Locktext;
+    //  public GameObject Locktext;
      private Button button;
      private Image image;
     void Start()
@@ -15,17 +15,17 @@ public class LevelButton : MonoBehaviour
         button = GetComponent<Button>();
         image = GetComponent<Image>();
          int UnlockedLevel = PlayerPrefs.GetInt("UnlockedLevel", 4);    
-         if(levelNumber <+UnlockedLevel)
+         if(levelNumber <=UnlockedLevel)
         {
             button.interactable = true;
             image.color = new Color(1f,1f,1f,1f);
-            Locktext.SetActive(false);
+            // Locktext.SetActive(false);
         }
         else
         {
             button.interactable = false;
             image.color = new Color(1f,1f,1f,0.4f); // Set to grayed out color
-            Locktext.SetActive(true);
+            // Locktext.SetActive(true);
         }
 
     }
