@@ -165092,13 +165092,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 74660116398591214, guid: ce84772e179edaa4c8487e9a8601f22c,
         type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 74660116398591214, guid: ce84772e179edaa4c8487e9a8601f22c,
+        type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1609825383}
+      objectReference: {fileID: 0}
     - target: {fileID: 74660116398591214, guid: ce84772e179edaa4c8487e9a8601f22c,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: OpenSettings
+      value: Open
+      objectReference: {fileID: 0}
+    - target: {fileID: 74660116398591214, guid: ce84772e179edaa4c8487e9a8601f22c,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: SettingBtnScrip, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 684017117919867344, guid: ce84772e179edaa4c8487e9a8601f22c,
         type: 3}
@@ -165119,6 +165129,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchoredPosition.x
       value: -46
+      objectReference: {fileID: 0}
+    - target: {fileID: 1764288660878130784, guid: ce84772e179edaa4c8487e9a8601f22c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2078687410350972296, guid: ce84772e179edaa4c8487e9a8601f22c,
         type: 3}

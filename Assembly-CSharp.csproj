@@ -48,6 +48,7 @@
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\6000.0.59f2\Editor\Data\Tools\Unity.SourceGenerators\Unity.UIToolkit.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\AudioSetting.cs" />
     <Compile Include="Assets\Scripts\Platform script\Platformrisingleft.cs" />
     <Compile Include="Assets\Scripts\Gameplay\PlayerSpawn.cs" />
     <Compile Include="Assets\Scripts\Token script\Tokendestroy.cs" />
@@ -64,6 +65,7 @@
     <Compile Include="Assets\Scripts\Gameplay\HealthIsZero.cs" />
     <Compile Include="Assets\Scripts\Mechanics\PatrolPath.Mover.cs" />
     <Compile Include="Assets\Scripts\Core\Fuzzy.cs" />
+    <Compile Include="Assets\Scripts\AudioManager.cs" />
     <Compile Include="Assets\Scripts\Platform script\MovingPlatformAttach.cs" />
     <Compile Include="Assets\Scripts\ObstacleReset.cs" />
     <Compile Include="Assets\Scripts\Mechanics\DeathZone.cs" />
@@ -75,6 +77,7 @@
     <Compile Include="Assets\Scripts\ShareScreenShot.cs" />
     <Compile Include="Assets\Scripts\Gameplay\PlayerTokenCollision.cs" />
     <Compile Include="Assets\Scripts\Token script\Diamondrightmove.cs" />
+    <Compile Include="Assets\Scripts\SettingPanelUi.cs" />
     <Compile Include="Assets\Scripts\Retry.cs" />
     <Compile Include="Assets\Scripts\Mechanics\VictoryZone.cs" />
     <Compile Include="Assets\Scripts\VictoryScript.cs" />
@@ -114,6 +117,7 @@
     <Compile Include="Assets\Mod Assets\Mod Resources\Scripts\Backend\TemplateEditorDetection.cs" />
     <Compile Include="Assets\Scripts\Mechanics\GameController.cs" />
     <Compile Include="Assets\Scripts\Gameplay\PlayerLanded.cs" />
+    <Compile Include="Assets\Scripts\SettingBtnScrip.cs" />
     <Compile Include="Assets\Scripts\SplashTimer.cs" />
     <Compile Include="Assets\Scripts\SpikesScript\Spiketrapmoveright.cs" />
     <Compile Include="Assets\Scripts\View\AnimatedTile.cs" />

@@ -12,7 +12,7 @@ public string nextSceneName = "MainMenu";
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        Screen.orientation = ScreenOrientation.Portrait;
+        Screen.orientation = ScreenOrientation.LandscapeLeft;
         StartCoroutine(LoadMenuAfterDelay());
     }
     IEnumerator LoadMenuAfterDelay()

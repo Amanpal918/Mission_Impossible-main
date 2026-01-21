@@ -1,4 +1,5 @@
-using NUnit.Framework;
+using Platformer.Core;
+using Platformer.Model;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -24,6 +25,9 @@ public class PauseManager : MonoBehaviour
     public void ReplayGame()
     {
         Time.timeScale = 1f;
+        CancelInvoke();
+        StopAllCoroutines();
+        Simulation.Clear();
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
     public void OpenSettings()

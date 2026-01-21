@@ -14,7 +14,7 @@ public class LevelButton : MonoBehaviour
     {
         button = GetComponent<Button>();
         image = GetComponent<Image>();
-         int UnlockedLevel = PlayerPrefs.GetInt("UnlockedLevel", 4);    
+         int UnlockedLevel = PlayerPrefs.GetInt("UnlockedLevel", 3);    
          if(levelNumber <=UnlockedLevel)
         {
             button.interactable = true;
@@ -24,7 +24,7 @@ public class LevelButton : MonoBehaviour
         else
         {
             button.interactable = false;
-            image.color = new Color(1f,1f,1f,0.4f); // Set to grayed out color
+            image.color = new Color(130f / 255f, 130f / 255f, 130f / 255f, 1f); // Set to grayed out color
             // Locktext.SetActive(true);
         }
 
