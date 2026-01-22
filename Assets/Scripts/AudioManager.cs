@@ -8,6 +8,8 @@ public class AudioManager : MonoBehaviour
     // public AudioSource sfxSource;
     public AudioSource audioSource;
     public AudioClip clip;
+    public AudioClip[] clips;
+
     public Slider volumeslider;
 
     void Awake()
@@ -28,6 +30,14 @@ public class AudioManager : MonoBehaviour
         audioSource.Play();
 
     }
+    public void ToggleMusic(bool isOn)
+    {
+        audioSource.mute = !isOn;
+    }
+    // public void ToggleSFx(bool isOn)
+    // {
+    //      sfxSource.mute = !isOn;
+    // }
    
    
 }

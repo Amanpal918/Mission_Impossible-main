@@ -16,27 +16,28 @@ public class SettingPanelUi : MonoBehaviour
     }
 public void ChangeVolume ()
     {
-        // volumeslider.value = PlayerPrefs.GetInt("Volume", 1);
-         Debug.Log("value"+ volumeslider.value);
-        // AudioListener.volume = value;
-        // PlayerPrefs .SetFloat ("volume", value);
-        float sliderValue = volumeslider.value;   // 0–100
-         AudioListener.volume = sliderValue;
+        // // volumeslider.value = PlayerPrefs.GetInt("Volume", 1);
+        //  Debug.Log("value"+ volumeslider.value);
+        // // AudioListener.volume = value;
+        // // PlayerPrefs .SetFloat ("volume", value);
+        // float sliderValue = volumeslider.value;   // 0–100
+        //  AudioListener.volume = sliderValue;
 
-        Debug.Log("Slider Value: " + sliderValue + " | Volume: " + AudioListener.volume);
-
+        // Debug.Log("Slider Value: " + sliderValue + " | Volume: " + AudioListener.volume);
+     AudioListener.volume = volumeslider.value; // slider 0–1
+    PlayerPrefs.SetFloat("Volume", volumeslider.value);
 
     }
-// public void ToggleMusic(bool isOn)
-//     {
-//         AudioManager.Instance.musicSource.mute = !isOn;
-//         PlayerPrefs.SetInt("music", isOn ? 1:0);
-//     }
-//     public void ToggleSFX(bool isOn)
-//     {
-//         AudioManager.Instance.sfxSource.mute = !isOn;
-//         PlayerPrefs.SetInt("SFX", isOn ? 1 : 0);
-//     }
+public void ToggleMusic(bool isOn)
+    {
+        AudioManager.Instance.audioSource.mute = !isOn;
+        PlayerPrefs.SetInt("music", isOn ? 1 : 0);
+    }
+    // public void ToggleSFX(bool isOn)
+    // {
+    //     AudioManager.Instance.sfxSource.mute = !isOn;
+    //     PlayerPrefs.SetInt("SFX", isOn ? 1 : 0);
+    // }
     public void CloseSettings()
     {
         settingpanel.SetActive(false);
