@@ -26,6 +26,9 @@ public class AudioManager : MonoBehaviour
     }
     void Start()
     {
+         float savedVolume = PlayerPrefs.GetFloat("Volume",1f);
+         audioSource.volume = savedVolume;
+         volumeslider.value = savedVolume;
           audioSource.clip = clip;
         audioSource.Play();
 

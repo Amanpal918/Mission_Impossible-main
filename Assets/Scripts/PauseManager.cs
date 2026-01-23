@@ -25,16 +25,16 @@ public class PauseManager : MonoBehaviour
     public void ReplayGame()
     {
         Time.timeScale = 1f;
-        CancelInvoke();
+        // CancelInvoke();
         StopAllCoroutines();
         Simulation.Clear();
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
-    public void OpenSettings()
-    {
-        // Implement settings menu opening logic here
-        Debug.Log("Settings menu opened.");
-    }
+    // public void OpenSettings()
+    // {
+    //     // Implement settings menu opening logic here
+    //     Debug.Log("Settings menu opened.");
+    // }
     public void GotoMainMenu()
     {
     Time.timeScale = 1f;
